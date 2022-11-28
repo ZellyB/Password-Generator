@@ -22,22 +22,22 @@ function writePassword() {
     var newpassword = generatePassword();
     passwordText.value = newpassword;
   } else {
-      passwordTest.value = "";
+      passwordText.value = "";
   }
 
 }
 
 function generatePassword() {
-  var password = ""
+  var password = "";
   for(var i = 0; i < characterlength; i++) {
-      var randomIndex = (math.random() * choiceArr.length);
+      var randomIndex = Math.floor(Math.random() * choiceArr.length);
       password = password + choiceArr[randomIndex];
   }
   return password;
 
 }
 
-function getPrompts(){
+function getPrompts() {
     choiceArr = [];
 
     characterlength = parseInt(prompt("How many characters do you want your password to be? (8-128 characters"));
